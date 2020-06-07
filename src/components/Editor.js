@@ -26,7 +26,7 @@ const Editor = () => {
                     <div className="dot yellow"></div>
                     <div className="dot green"></div>
                 </div>
-                <div>
+                <div className="download">
                     <input className="nav-button" value="Donwload Markdown" type="button" onClick={downloadTxtFile}/>
                     <input className="nav-input" type="text" placeholder="File name..." onChange={(e) => setFileName(e.target.value)}/>
                 </div>
@@ -64,6 +64,15 @@ const EditorStyled = Styled.div`
         background-color:#212121;
         border-radius:8px 8px 0 0;
 
+        .download{
+            display:flex;
+            .nav-button{
+                width:50%;
+            }
+            .nav-input{
+                width:50%;
+            }
+        }
         .buttons{
             display:flex;
             align-items:center;

@@ -11,7 +11,7 @@ const Hero = ()=> {
                 <h1 className="title">My MDE</h1>
                 <p className="subtitle">A Simple Online Markdown Editor</p>
                 <div className="hero-button">
-                    <Button className="btn">Try it out</Button>
+                    <Button className="btn">About</Button>
                     <Button className="btn">GitHub</Button>
                 </div>
             </div>

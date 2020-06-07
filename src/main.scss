@@ -99,3 +99,10 @@ a{
     width:100%;
     padding: 0 10%;
 }
+
+// Responsive
+@media(max-width:640px){
+  .download{
+    display:none !important;
+  }
+}
