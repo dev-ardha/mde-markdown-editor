@@ -8,7 +8,7 @@ const Index = ()=> {
     return(
         <IndexStyled>
             <Helmet>
-                <title>My MDE - React Markdown Editor</title>
+                <title>My MDE - Online Markdown Editor</title>
             </Helmet>
             <Hero/>
             <div className="content">

@@ -9,7 +9,6 @@ const About = ()=> {
                 <title>My MDE - About</title>
                 <meta name="description" content="A simple markdown editor with live preview built with React.js" />
                 <meta name="keyword" content="markdown, ardha, dev.ardha, markdown editor, text editor, markdown preview, react markdown, my mde, mde, react markdown editor, react markdown preview" />
-                <title>React Markdown Editor</title>
                 <meta name="author" content="dev.ardha"/>
                 <meta name="robots" content="index,follow"/>
                 <meta content='@ardhaydhtm' name='twitter:site'/>
