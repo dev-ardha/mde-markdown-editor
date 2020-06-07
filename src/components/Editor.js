@@ -1,24 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import Styled from '@emotion/styled'
-import { useState } from 'react'
 import Preview from './Preview'
 
 const Editor = () => {
 
     const [ content, setContent ] = useState('# Type markdown here');
     const [ onEditing, setOnEditing ] = useState(true);
+    const [ fileName, setFileName ] = useState('')
+
+    const downloadTxtFile = () => {
+        const element = document.createElement("a");
+        const file = new Blob([document.getElementById('markdown').value], {type: 'text/plain'});
+
+        element.href = URL.createObjectURL(file);
+        element.download = fileName ? `${fileName}.md` : 'untitled.md';
+        document.body.appendChild(element);
+        element.click();
+    }
 
     return (
         <EditorStyled>
             <div className="page-nav">
                 <div className="buttons">
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
+                    <div className="dot red"></div>
+                    <div className="dot yellow"></div>
+                    <div className="dot green"></div>
+                </div>
+                <div>
+                    <input className="nav-button" value="Donwload Markdown" type="button" onClick={downloadTxtFile}/>
+                    <input className="nav-input" type="text" placeholder="File name..." onChange={(e) => setFileName(e.target.value)}/>
                 </div>
                 <ul>
-                    <li className={onEditing ? 'active' : ''} onClick={() => setOnEditing(true)}>Editor</li>
-                    <li className={onEditing ? '' : 'active'} onClick={() => setOnEditing(false)}>Preview</li>
+                    <li className="nav-button" className={onEditing ? 'active' : ''} onClick={() => setOnEditing(true)}>Editor</li>
+                    <li className="nav-button" className={onEditing ? '' : 'active'} onClick={() => setOnEditing(false)}>Preview</li>
                 </ul>
             </div>
             <div className="editor">
@@ -61,6 +75,38 @@ const EditorStyled = Styled.div`
                 height:16px;
                 background-color:rgba(0,0,0,0.5);
             }
+
+            .red{
+                background-color:#FF605C;
+            }
+            .yellow{
+                background-color:#FFBD44;
+            }
+            .green{
+                background-color:#00CA4E;
+            }
+        }
+        .nav-button{
+            cursor:pointer;
+        }
+        input{
+            padding: .5rem 1rem;
+            font-size:.8rem;
+            margin-left:10px;
+            color:#fff;
+            background-color:#191919;
+            border:none;
+
+            &:focus{
+                outline:none;
+            }
+
+            &:hover{
+                background-color:rgba(0,0,0,0.5);
+            }
+        }
+        .nav-input:focus{
+            background-color:#0c0c0c;
         }
         ul{
             display:flex;

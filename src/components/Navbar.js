@@ -13,9 +13,9 @@ const Navbar = ()=> {
                     <NavLink to="/about" exact className="navlink" activeClassName="active">
                         <li>About</li>
                     </NavLink>
-                    <NavLink to="/github" exact className="navlink" activeClassName="active">
+                    <a href="https://github.com/dev-ardha/mymde-markdown-editor" exact className="navlink" activeClassName="active">
                         <li>GitHub</li>
-                    </NavLink>
+                    </a>
                 </ul>
             </div>
         </NavbarStyled>
@@ -26,6 +26,7 @@ const NavbarStyled = Styled.header`
     position:sticky;
     top:0;
     width:100%;
+    border-bottom:1px solid #090909;
     background:#111;
 
     ul{
@@ -41,8 +42,7 @@ const NavbarStyled = Styled.header`
         cursor:pointer;
     }
     .active{
-        background-color:#e00f7a;
-        border-radius:0 0 1rem 1rem;
+        background-color:#666;
     }
 `
 

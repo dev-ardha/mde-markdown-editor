@@ -16,7 +16,7 @@ const Index = ()=> {
 
 const IndexStyled = Styled.div`
     .content{
-        padding:70px 10%;
+        padding:0 10% 70px 10%;
         display:flex;
     }
 `
