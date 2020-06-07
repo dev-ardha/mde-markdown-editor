@@ -102,6 +102,10 @@ a{
 
 // Responsive
 @media(max-width:640px){
+  .content{
+    padding-left:5% !important;
+    padding-right: 5% !important;
+  }
   .download{
     display:none !important;
   }
