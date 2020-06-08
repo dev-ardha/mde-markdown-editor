@@ -13,9 +13,6 @@ class App extends Component{
     render(){
         return(
             <Router>
-                <Helmet>
-                    <link rel="icon" href="../public/favicon.ico" />
-                </Helmet>
                 <Navbar/>
                 <Switch>
                     <Route exact path='/' component={Index}/>
